@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: al-nafi-development-webapp
+  labels:
+    app: development
+    tier: production
+spec:
+  containers:
+  - name: development-webapp
+    image: kodekloud/webapp-delayed-start
+    ports:
+      - containerPort: 8080
+        protocol: TCP 
+  tolerations:
+  - key: spray
+    operator: Equal
+    value: anti-insect
+    effect: NoSchedule
+

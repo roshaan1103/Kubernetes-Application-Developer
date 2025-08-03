@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: alnafi-dev-service
+  namespace: default
+spec: 
+  ports:
+  - nodePort: 30080
+    port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: development
+  type: NodePort
