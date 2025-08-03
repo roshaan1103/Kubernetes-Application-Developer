@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    tier: front-end
+  name: demo-svc
+spec:
+  ports:
+  - name: 5678-8080
+    port: 5678
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: demo-svc
+  type: ClusterIP
+status:
+  loadBalancer: {}
